@@ -1,0 +1,21 @@
+import turtle
+
+tela = turtle.Screen()
+
+start = turtle.Turtle()
+
+def triangulo(x, y):
+    start.penup()
+    start.goto(x, y)
+    start.pendown()
+
+    for i in range(3):
+        start.forward(100)
+        start.left(120)
+        start.forward(100)
+
+turtle.onscreenclick(triangulo, 1)
+
+turtle.listen()
+
+turtle.done()
