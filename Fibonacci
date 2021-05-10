@@ -1,0 +1,76 @@
+import turtle
+import math
+
+
+def fibonacci(n):
+    x = 0
+    y = 1
+    square_x = x
+    square_y = y
+
+    # Cor dos quadrados
+    start.pencolor("black")
+
+    # Primeiro quadrado
+    for e in range(4):
+        start.forward(y * factor)
+        start.left(90)
+
+    # inicio do Fibonacci
+    guard = square_y
+    square_y = square_y + square_x
+    square_x = guard
+
+    # Os outros quadrados
+    for i in range(1, n):
+        start.backward(square_x * factor)
+        start.right(90)
+        start.forward(square_y * factor)
+        start.left(90)
+        start.forward(square_y * factor)
+        start.left(90)
+        start.forward(square_y * factor)
+
+        # Continuação do Fibonacci
+        guard = square_y
+        square_y = square_y + square_x
+        square_x = guard
+
+    # Inicio da linha verde
+    start.penup()
+    start.setposition(factor, 0)
+    start.seth(0)
+    start.pendown()
+
+    # cor da linha
+    start.pencolor("green")
+
+    # Linha verde espiral
+    start.left(90)
+    for i in range(n):
+        print(y)
+        fdwd = math.pi * y * factor / 2
+        fdwd /= 90
+        for j in range(90):
+            start.forward(fdwd)
+            start.left(1)
+        guard = x
+        x = y
+        y = guard + y
+
+
+# Multiplicador
+factor = 1
+
+# entrada do usuário
+n = int(input('Número de interações (deve ser maior que 1): '))
+
+# Experiencia do usuário
+if n > 0:
+    print(f"Fibonacci series para {n} elementos :")
+    start = turtle.Turtle()
+    start.speed(100)
+    fibonacci(n)
+    turtle.done()
+else:
+    print("O número de interações deve ser maior que 0")
