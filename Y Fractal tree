@@ -1,0 +1,30 @@
+from turtle import *
+
+def y(sz, level):
+    if level > 0:
+        colormode(255)
+
+        pencolor(0, 255 // level, 0)
+
+        fd(sz)
+
+        rt(30)
+
+        y(0.8 * sz, level - 1)
+
+        pencolor(0, 255 // level, 0)
+
+        lt(2 * 30)
+
+        y(0.8 * sz, level - 1)
+
+        pencolor(0, 255 // level, 0)
+
+        rt(30)
+        fd(-sz)
+
+
+speed("fastest")
+lt(90)
+
+y(80, 14)
